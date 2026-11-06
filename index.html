@@ -59,21 +59,21 @@
             background-position: center;
             background-size: cover;
             width: 300px;
-            height: 350px;
+            height: 440px;
             border-radius: 1rem;
             overflow: hidden;
             border: 2px solid #FFB800;
             background-color: #fff;
-            padding: 20px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             color: #0F3E47;
         }
         @media (min-width: 768px) {
             .swiper-slide {
                 width: 380px;
-                height: 380px;
+                height: 460px;
             }
         }
         /* Navbar styling on scroll */
@@ -110,37 +110,57 @@
         </div>
     </nav>
 
-    <!-- Hero / Over Ons Sectie -->
-    <section id="over-ons" class="relative min-h-screen flex items-center justify-start pt-28 pb-16" style="background-image: url('afbeelding1.jpg'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-brand-dark/70"></div>
+    <!-- Hero / Over Ons Sectie met achtergrondvideo én foto naast het tekstblok -->
+    <section id="over-ons" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+        
+        <!-- Achtergrond MP4 Video (speelt in loop, zonder geluid, vult de hele banner) -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="achtergrond.mp4" type="video/mp4">
+            Je browser ondersteunt geen HTML5-video.
+        </video>
+
+        <!-- Donkere semi-transparante overlay over de video -->
+        <div class="absolute inset-0 bg-[#0F3D47]/70 z-0"></div>
         
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
-            <div class="max-w-3xl bg-white/10 backdrop-blur-md border-l-4 border-brand-yellow rounded-r-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-right" data-aos-duration="1200">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 
-                <h1 class="text-3xl md:text-5xl font-extrabold text-brand-yellow mb-4">
-                    Nooit Meer Saaie Sessies
-                </h1>
-                <p class="text-xl text-white font-semibold mb-6">
-                    Interactiekaarten Set & Workshop
-                </p>
-                
-                <div class="text-gray-100 text-base md:text-lg leading-relaxed space-y-4 mb-8">
-                    <p>
-                        Ben jij bekend met dat ongemakkelijke moment aan het einde van een presentatie wanneer de spreker vraagt: “Zijn er nog vragen?” en er een pijnlijke stilte volgt?
+                <!-- Linker kolom: Eerste blok (Nooit Meer Saaie Sessies) -->
+                <div class="lg:col-span-7 bg-brand-dark/80 backdrop-blur-md border-l-4 border-brand-yellow rounded-r-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-right" data-aos-duration="1200">
+                    
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-brand-yellow mb-4">
+                        Nooit Meer Saaie Sessies
+                    </h1>
+                    <p class="text-xl text-white font-semibold mb-6">
+                        Interactiekaarten Set & Workshop
                     </p>
-                    <p>
-                        Onze missie is om jou te helpen de juiste balans te vinden tussen zenden en interactie, en die ongemakkelijke stilte aan het einde van je presentatie te voorkomen. Met de unieke set Interactiekaarten en onze energieke workshops zorgen we ervoor dat elke bijeenkomst interactief, efficiënt en effectief wordt.
-                    </p>
+                    
+                    <div class="text-gray-100 text-base md:text-lg leading-relaxed space-y-4 mb-8">
+                        <p>
+                            Ben jij bekend met dat ongemakkelijke moment aan het einde van een presentatie wanneer de spreker vraagt: “Zijn er nog vragen?” en er een pijnlijke stilte volgt?
+                        </p>
+                        <p>
+                            Onze missie is om jou te helpen de juiste balans te vinden tussen zenden en interactie, en die ongemakkelijke stilte aan het einde van je presentatie te voorkomen. Met de unieke set Interactiekaarten en onze energieke workshops zorgen we ervoor dat elke bijeenkomst interactief, efficiënt en effectief wordt.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#workshop" class="bg-transparent border-2 border-brand-yellow text-brand-yellow hover:bg-brand-yellow hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300">
+                            Meer over de workshop
+                        </a>
+                        <a href="#contact" class="bg-brand-yellow text-black hover:bg-yellow-400 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                            Neem contact op
+                        </a>
+                    </div>
                 </div>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#workshop" class="bg-transparent border-2 border-brand-yellow text-brand-yellow hover:bg-brand-yellow hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300">
-                        Meer over de workshop
-                    </a>
-                    <a href="#contact" class="bg-brand-yellow text-black hover:bg-yellow-400 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                        Neem contact op
-                    </a>
+                <!-- Rechter kolom: Foto met afgeronde hoeken naast het eerste blok -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="1200">
+                    <img src="kaarten.png" 
+                         alt="Interactiekaarten Set en Workshop in actie" 
+                         class="w-full max-w-md lg:max-w-full h-auto object-cover rounded-3xl shadow-2xl border-2 border-brand-yellow/60">
                 </div>
+
             </div>
         </div>
     </section>
@@ -189,12 +209,8 @@
                             <span>Ideaal voor managers, teamleiders, facilitators, docenten en iedereen die regelmatig voor een groep spreekt.</span>
                         </div>
                         <div>
-                            <strong class="text-white block font-semibold">Tijdsduur:</strong>
-                            <span>1,5 uur (uit te breiden naar een compleet dagdeel inclusief redesign van jouw eigen sessie).</span>
-                        </div>
-                        <div>
                             <strong class="text-white block font-semibold">Investering:</strong>
-                            <span>Workshop van 1,5 uur is € 2.100,- ex btw (inclusief interactieve kaartensets). Dagdeel op aanvraag.</span>
+                            <span>De workshop is in een korte variant van 1,5 uur waarin je met de set aan de slag gaat. De langere variant van 3 uur laat je een volledige eigen sessie maken aan de hand van de kaartenDagdeel op aanvraag. Beide zijn inclusief interactiekaartenset. Prijs en maatwerk op aanvraag.</span>
                         </div>
                     </div>
                 </div>
@@ -220,7 +236,7 @@
                 <!-- Jasmijn -->
                 <div class="bg-[#14525D] rounded-2xl p-8 border border-white/10 text-center group" data-aos="fade-up" data-aos-delay="0">
                     <div class="w-40 h-40 mx-auto bg-gray-700 rounded-full mb-6 overflow-hidden border-4 border-brand-yellow">
-                        <img src="afbeelding2.jpg" alt="Jasmijn Mioch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="jasmijn.jpg" alt="Jasmijn Mioch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-bold text-brand-yellow mb-3">Jasmijn Mioch</h3>
                     <p class="text-gray-200 text-sm leading-relaxed">
@@ -231,7 +247,7 @@
                 <!-- Eddy -->
                 <div class="bg-[#14525D] rounded-2xl p-8 border border-white/10 text-center group" data-aos="fade-up" data-aos-delay="150">
                     <div class="w-40 h-40 mx-auto bg-gray-700 rounded-full mb-6 overflow-hidden border-4 border-brand-yellow">
-                        <img src="afbeelding3.jpg" alt="Eddy Bruin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="eddy.jpg" alt="Eddy Bruin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-bold text-brand-yellow mb-3">Eddy Bruin</h3>
                     <p class="text-gray-200 text-sm leading-relaxed">
@@ -257,10 +273,14 @@
                     
                     <!-- Review 1: Maartje Zomer -->
                     <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                        <p class="text-gray-800 text-sm md:text-base italic font-medium">
                             "De workshop opende mijn ogen voor de creativiteit in onze standaard meetings. Ik kijk uit naar meer productiviteit en interessantere bijeenkomsten."
                         </p>
-                        <div class="mt-auto">
+                        <!-- Foto tussen de quote en de naam -->
+                        <div class="my-3">
+                            <img src="afbeelding1.jpg" alt="Maartje Zomer" class="w-full h-28 object-cover rounded-xl border border-brand-yellow">
+                        </div>
+                        <div>
                             <strong class="block text-brand-teal font-bold">Maartje Zomer</strong>
                             <span class="text-xs text-gray-600">L&D Specialist</span>
                         </div>
@@ -268,10 +288,14 @@
 
                     <!-- Review 2: Thiemen de Groot -->
                     <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                        <p class="text-gray-800 text-sm md:text-base italic font-medium">
                             "Ik heb echt genoten van jullie workshop! Nu kan ik saaie lange meetings opvrolijken en ervoor zorgen dat er genoeg energie is om bij de les te blijven."
                         </p>
-                        <div class="mt-auto">
+                        <!-- Foto tussen de quote en de naam -->
+                        <div class="my-3">
+                            <img src="afbeelding2.jpg" alt="Thiemen de Groot" class="w-full h-28 object-cover rounded-xl border border-brand-yellow">
+                        </div>
+                        <div>
                             <strong class="block text-brand-teal font-bold">Thiemen de Groot</strong>
                             <span class="text-xs text-gray-600">Designer InBrainer</span>
                         </div>
@@ -279,41 +303,43 @@
 
                     <!-- Review 3: Willemijn van Leeuwen - de Vries -->
                     <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                        <p class="text-gray-800 text-sm md:text-base italic font-medium">
                             "Ik was verrast dat de workshop ons spelenderwijs veel werkvormen aanreikte om elke bijeenkomst van begin tot eind interactief, efficiënt en effectief te maken."
                         </p>
-                        <div class="mt-auto">
+                        <!-- Foto tussen de quote en de naam -->
+                        <div class="my-3">
+                            <img src="afbeelding3.jpg" alt="Willemijn van Leeuwen - de Vries" class="w-full h-28 object-cover rounded-xl border border-brand-yellow">
+                        </div>
+                        <div>
                             <strong class="block text-brand-teal font-bold">Willemijn van Leeuwen - de Vries</strong>
                             <span class="text-xs text-gray-600">Manager Talent & Development</span>
                         </div>
                     </div>
 
-                    <!-- Review 4: Petra -->
-                    <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
-                            "De kaarten pak je er makkelijk bij. En omdat alles is ingedeeld in categorieën, is het heel snel te scannen."
-                        </p>
-                        <div class="mt-auto">
-                            <strong class="block text-brand-teal font-bold">Petra</strong>
-                        </div>
-                    </div>
-
                     <!-- Review 5: Swen-Peter Ekkebus -->
                     <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                        <p class="text-gray-800 text-sm md:text-base italic font-medium">
                             "Heldere uitleg over het gebruik van de kaarten. Ik heb 9 nieuwe ideeën opgedaan!"
                         </p>
-                        <div class="mt-auto">
+                        <!-- Foto tussen de quote en de naam -->
+                        <div class="my-3">
+                            <img src="afbeelding4.jpg" alt="Swen-Peter Ekkebus" class="w-full h-28 object-cover rounded-xl border border-brand-yellow">
+                        </div>
+                        <div>
                             <strong class="block text-brand-teal font-bold">Swen-Peter Ekkebus</strong>
                         </div>
                     </div>
 
                     <!-- Review 6: Margot -->
                     <div class="swiper-slide text-left shadow-lg">
-                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                        <p class="text-gray-800 text-sm md:text-base italic font-medium">
                             "Door hele concrete oefeningen en tips, kan ik bepaalde onderdelen uit mijn workshops net wat beter maken. Aanrader!"
                         </p>
-                        <div class="mt-auto">
+                        <!-- Foto tussen de quote en de naam -->
+                        <div class="my-3">
+                            <img src="afbeelding5.png" alt="Margot" class="w-full h-28 object-cover rounded-xl border border-brand-yellow">
+                        </div>
+                        <div>
                             <strong class="block text-brand-teal font-bold">Margot</strong>
                         </div>
                     </div>
@@ -338,10 +364,10 @@
             
             <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                 <a href="mailto:jasmijn@creatingsessions.nl" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-all">
-                    ✉️ jasmijn@creatingsessions.nl
+                    ✉️ jasmijn@creatingsessions.nl - 📞 06 30 68 36 12
                 </a>
                 <a href="mailto:eddy@theseriousgamers.com" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-all">
-                    ✉️ eddy@theseriousgamers.com
+                    ✉️ eddy@theseriousgamers.com - 📞 06 37 62 50 63
                 </a>
             </div>
 
