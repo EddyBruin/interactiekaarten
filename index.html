@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactiekaarten Set & Workshop - Nooit Meer Saaie Sessies</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library CSS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS (Carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            teal: '#1B6A78',
+                            yellow: '#FFB800',
+                            dark: '#0F3E47'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #FFB800;
+            color: #000;
+        }
+        body {
+            overflow-x: hidden;
+            background-color: #0F3E47;
+            color: #fff;
+        }
+        
+        /* Swiper carousel custom styling */
+        .swiper {
+            width: 100%;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 350px;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 2px solid #FFB800;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #0F3E47;
+        }
+        @media (min-width: 768px) {
+            .swiper-slide {
+                width: 380px;
+                height: 380px;
+            }
+        }
+        /* Navbar styling on scroll */
+        .scrolled-nav {
+            background-color: rgba(15, 62, 71, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 184, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Titel -->
+                <a href="#" class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-extrabold text-white tracking-wide">Nooit Meer Saaie Sessies</span>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#over-ons" class="text-white hover:text-brand-yellow font-semibold transition-colors">Over ons</a>
+                    <a href="#workshop" class="text-white hover:text-brand-yellow font-semibold transition-colors">De Workshop</a>
+                    <a href="#team" class="text-white hover:text-brand-yellow font-semibold transition-colors">Het Team</a>
+                    <a href="#referenties" class="text-white hover:text-brand-yellow font-semibold transition-colors">Ervaringen</a>
+                    <a href="#contact" class="bg-brand-yellow text-black px-5 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-400 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <a href="#contact" class="bg-brand-yellow text-black px-4 py-2 rounded-full font-bold text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Over Ons Sectie -->
+    <section id="over-ons" class="relative min-h-screen flex items-center justify-start pt-28 pb-16" style="background-image: url('afbeelding1.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-brand-dark/70"></div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
+            <div class="max-w-3xl bg-white/10 backdrop-blur-md border-l-4 border-brand-yellow rounded-r-2xl p-8 md:p-12 shadow-2xl" data-aos="fade-right" data-aos-duration="1200">
+                
+                <h1 class="text-3xl md:text-5xl font-extrabold text-brand-yellow mb-4">
+                    Nooit Meer Saaie Sessies
+                </h1>
+                <p class="text-xl text-white font-semibold mb-6">
+                    Interactiekaarten Set & Workshop
+                </p>
+                
+                <div class="text-gray-100 text-base md:text-lg leading-relaxed space-y-4 mb-8">
+                    <p>
+                        Ben jij bekend met dat ongemakkelijke moment aan het einde van een presentatie wanneer de spreker vraagt: “Zijn er nog vragen?” en er een pijnlijke stilte volgt?
+                    </p>
+                    <p>
+                        Onze missie is om jou te helpen de juiste balans te vinden tussen zenden en interactie, en die ongemakkelijke stilte aan het einde van je presentatie te voorkomen. Met de unieke set Interactiekaarten en onze energieke workshops zorgen we ervoor dat elke bijeenkomst interactief, efficiënt en effectief wordt.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#workshop" class="bg-transparent border-2 border-brand-yellow text-brand-yellow hover:bg-brand-yellow hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300">
+                        Meer over de workshop
+                    </a>
+                    <a href="#contact" class="bg-brand-yellow text-black hover:bg-yellow-400 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        Neem contact op
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Groot Beeld / Kaarten Set Sectie -->
+    <section class="py-16 bg-brand-dark flex justify-center items-center border-y border-white/10" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-4xl text-center px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-yellow mb-4">De 6 i's van Interactie</h2>
+            <p class="text-gray-200 text-lg leading-relaxed">
+                Ons uitgangspunt zijn de 6 i’s van interactie: uitgedaagd worden om na te denken over de beoogde impact en het doel. Vanuit daar kies je categorieën zoals: <strong>In contact komen, Informeren, Inspireren, Input ophalen & Implementatie</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Workshop Sectie -->
+    <section id="workshop" class="py-24 px-6 sm:px-12 lg:px-24 bg-[#14525D]">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-yellow mb-6">Waarom je wilt deelnemen</h2>
+                    <p class="text-gray-200 text-lg leading-relaxed mb-6">
+                        Sta jij wel eens voor groepen of geef jij presentaties? Hoe fijn is het als jouw publiek actief en betrokken is, jouw verhaal indruk maakt en jouw doelen worden bereikt. Met de interactiekaarten ga je zelf aan de slag en krijg je een berg inspiratie als bonus.
+                    </p>
+                    <ul class="space-y-3 text-gray-200">
+                        <li class="flex items-start">
+                            <span class="text-brand-yellow font-bold mr-2">✓</span> Weet waar je moet beginnen voor meer impact.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-yellow font-bold mr-2">✓</span> Herken de i's van interactie en zet ze slim in.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-yellow font-bold mr-2">✓</span> Ervaar en pas direct nieuwe werkvormen toe.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-yellow font-bold mr-2">✓</span> Verlaat de workshop met een lach en nieuwe energie.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/10 shadow-xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-brand-yellow mb-4">Praktische Informatie</h3>
+                    <div class="space-y-4 text-gray-200">
+                        <div>
+                            <strong class="text-white block font-semibold">Doelgroep:</strong>
+                            <span>Ideaal voor managers, teamleiders, facilitators, docenten en iedereen die regelmatig voor een groep spreekt.</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block font-semibold">Tijdsduur:</strong>
+                            <span>1,5 uur (uit te breiden naar een compleet dagdeel inclusief redesign van jouw eigen sessie).</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block font-semibold">Investering:</strong>
+                            <span>Workshop van 1,5 uur is € 2.100,- ex btw (inclusief interactieve kaartensets). Dagdeel op aanvraag.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Het Team / Leden Sectie -->
+    <section id="team" class="py-24 px-6 sm:px-12 lg:px-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="max-w-4xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-brand-yellow mb-4 uppercase tracking-wider">Over Ons</h2>
+                <p class="text-lg text-gray-300">
+                    Professionals houden van inhoud. Wij zijn er voor jou om daar ruimte, lucht en plezier aan toe te voegen.
+                </p>
+            </div>
+            
+            <!-- Team Grid (2 personen) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                
+                <!-- Jasmijn -->
+                <div class="bg-[#14525D] rounded-2xl p-8 border border-white/10 text-center group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-40 h-40 mx-auto bg-gray-700 rounded-full mb-6 overflow-hidden border-4 border-brand-yellow">
+                        <img src="afbeelding2.jpg" alt="Jasmijn Mioch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-yellow mb-3">Jasmijn Mioch</h3>
+                    <p class="text-gray-200 text-sm leading-relaxed">
+                        Dagvoorzitter, podcastmaker en facilitator. Rust voor jou, energie in jouw sessie; met een achtergrond in journalistiek houdt zij van de vraag achter de vraag.
+                    </p>
+                </div>
+
+                <!-- Eddy -->
+                <div class="bg-[#14525D] rounded-2xl p-8 border border-white/10 text-center group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-40 h-40 mx-auto bg-gray-700 rounded-full mb-6 overflow-hidden border-4 border-brand-yellow">
+                        <img src="afbeelding3.jpg" alt="Eddy Bruin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-brand-yellow mb-3">Eddy Bruin</h3>
+                    <p class="text-gray-200 text-sm leading-relaxed">
+                        Organisatiecoach en Serious Game Facilitator. Zijn missie is werkplekken leuker maken zodat iedereen het beste presteert door spel in te zetten op het werk.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Klantreferenties (Carrousel) -->
+    <section id="referenties" class="py-24 px-6 sm:px-12 lg:px-24 bg-[#14525D] overflow-hidden">
+        <div class="max-w-7xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-yellow mb-2">Ervaringen van deelnemers</h2>
+                <p class="text-gray-200">Ruim 120 enthousiaste deelnemers gingen je voor (o.a. Hogeschool Utrecht, HRD Congres, Develhub Days).</p>
+            </div>
+            
+            <!-- Swiper Container voor de quotes -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Review 1: Maartje Zomer -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "De workshop opende mijn ogen voor de creativiteit in onze standaard meetings. Ik kijk uit naar meer productiviteit en interessantere bijeenkomsten."
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Maartje Zomer</strong>
+                            <span class="text-xs text-gray-600">L&D Specialist</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 2: Thiemen de Groot -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "Ik heb echt genoten van jullie workshop! Nu kan ik saaie lange meetings opvrolijken en ervoor zorgen dat er genoeg energie is om bij de les te blijven."
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Thiemen de Groot</strong>
+                            <span class="text-xs text-gray-600">Designer InBrainer</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 3: Willemijn van Leeuwen - de Vries -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "Ik was verrast dat de workshop ons spelenderwijs veel werkvormen aanreikte om elke bijeenkomst van begin tot eind interactief, efficiënt en effectief te maken."
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Willemijn van Leeuwen - de Vries</strong>
+                            <span class="text-xs text-gray-600">Manager Talent & Development</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 4: Petra -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "De kaarten pak je er makkelijk bij. En omdat alles is ingedeeld in categorieën, is het heel snel te scannen."
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Petra</strong>
+                        </div>
+                    </div>
+
+                    <!-- Review 5: Swen-Peter Ekkebus -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "Heldere uitleg over het gebruik van de kaarten. Ik heb 9 nieuwe ideeën opgedaan!"
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Swen-Peter Ekkebus</strong>
+                        </div>
+                    </div>
+
+                    <!-- Review 6: Margot -->
+                    <div class="swiper-slide text-left shadow-lg">
+                        <p class="text-gray-800 text-base italic mb-4 font-medium">
+                            "Door hele concrete oefeningen en tips, kan ik bepaalde onderdelen uit mijn workshops net wat beter maken. Aanrader!"
+                        </p>
+                        <div class="mt-auto">
+                            <strong class="block text-brand-teal font-bold">Margot</strong>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Meer Informatie Sectie -->
+    <section id="contact" class="py-24 px-6 sm:px-12 lg:px-24 bg-brand-dark relative">
+        <div class="relative z-10 max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+                Nooit Meer Saaie Sessies!
+            </h2>
+
+            <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+                Wil je meer weten over wat we voor jou kunnen doen? Stuur ons een e-mail. We verspreiden met heel veel plezier onze missie!
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:jasmijn@creatingsessions.nl" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-all">
+                    ✉️ jasmijn@creatingsessions.nl
+                </a>
+                <a href="mailto:eddy@theseriousgamers.com" class="bg-brand-yellow text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition-all">
+                    ✉️ eddy@theseriousgamers.com
+                </a>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 max-w-xl mx-auto">
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Nooit meer saaie sessies en de interactiekaarten zijn ontwikkeld door: <br>
+                    <a href="https://creatingsessions.nl" target="_blank" class="text-brand-yellow font-semibold hover:underline">creatingsessions.nl</a> en <a href="https://theseriousgamers.com" target="_blank" class="text-brand-yellow font-semibold hover:underline">theseriousgamers.com</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-black border-t border-white/10">
+        <p class="text-zinc-500 text-sm">
+            &copy; <script>document.write(new Date().getFullYear())</script> Nooit Meer Saaie Sessies, Creating Sessions & The Serious Gamers. Alle rechten voorbehouden.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Init AOS
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+
+        // Init Swiper
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            coverflowEffect: {
+                rotate: 10,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled-nav');
+            } else {
+                navbar.classList.remove('scrolled-nav');
+            }
+        });
+    </script>
+</body>
+</html>
